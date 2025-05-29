@@ -7,12 +7,22 @@ import org.junit.jupiter.api.Test;
 public class RqTest {
 
     @Test
-    @DisplayName("Rq.getActionName")
+    @DisplayName("Rq.getActionName()")
     void t1() {
         Rq rq = new Rq("수정?id=1");
 
         String actionName = rq.getActionName();
 
         Assertions.assertEquals("수정", actionName);
+    }
+
+    @Test
+    @DisplayName("Rq.getActionName()")
+    void t2() {
+        Rq rq = new Rq("삭제?id=1");
+
+        String actionName = rq.getActionName();
+
+        Assertions.assertEquals("삭제", actionName);
     }
 }
